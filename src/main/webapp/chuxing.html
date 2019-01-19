@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="js/vue.min.js"></script>
+
+</head>
+<body>
+<!--    <div id="box">
+        <input type="text" v-model="msg">
+        <br>
+        {{msg}}
+        <br>
+        {{msg2}}
+        <br>
+        {{msg3}}
+        <br>
+        {{arr}}
+        <br>
+        {{json.a}}
+    </div>-->
+    <div id="box">
+        <ul>
+            <li v-for="(value,index) in arr">{{value}}{{index}}</li>
+        </ul>
+        <hr>
+        <ul>
+            <li v-for="(value,key) in json">{{value}} {{key}}</li>
+        </ul>
+        <hr>
+        <input type="button" value="按钮" v-on:click="add()">
+    </div>
+</body>
+<script type="text/javascript">
+    new Vue({
+        el:'#box',
+        data:{
+            msg:'hello vue',
+            msg2:12,
+            msg3:true,
+            arr:['apple','pear'],
+            json:{a:'apple',b:"orange"}
+        },
+        methods:{
+            show:function () {
+                alert("1")
+            },
+            add:function () {
+                this.arr.push('tomato')
+            }
+        }
+    })
+
+</script>
+</html>
